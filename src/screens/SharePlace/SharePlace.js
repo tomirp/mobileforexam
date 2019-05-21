@@ -14,14 +14,16 @@ import PickLocation from '../../components/PickLocation/PickLocation'
 import PickImage from '../../components/PickImage/PickImage'
 
 class SharePlaceScreen extends Component {
+    state = {
+        placeName : ''
+    }
+
     constructor(props) {
         super(props)
         this.props.navigator.setOnNavigatorEvent(this.onNavigatorEvent);
     }
 
     onNavigatorEvent = event => {
-        console.log(event);
-        
         if (event.type === 'NavBarButtonPress'){
             if (event.id === 'sideDrawerToggle'){
                 this.props.navigator.toggleDrawer({
@@ -31,9 +33,16 @@ class SharePlaceScreen extends Component {
         }
     }
 
+    placeNameChangedHandler = (val) => {
+        this.setState({
+            placeName: val
+        })
+    }
 
-    placeAddedHandler = placeName => {
-        this.props.onAddPlace(placeName)
+    placeAddedHandler = () => {
+        if(this.state.placeName.trim() !== ''){
+            this.props.onAddPlace(this.state.placeName)
+        }
     }
 
     render () {
@@ -45,8 +54,11 @@ class SharePlaceScreen extends Component {
                     </MainText>
                     <PickImage/>
                     <PickLocation/>
-                    <PlaceInput/>
-                        <Button title='Share Place'/>
+                    <PlaceInput
+                        placeName = {this.state.placeName}
+                        onChangeText = {this.placeNameChangedHandler}
+                    />
+                    <Button title='Share Place' onPress={this.placeAddedHandler}/>
                 </View>
             </ScrollView>
         );
