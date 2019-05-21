@@ -6,7 +6,7 @@ import {Fire} from '../../firebase/index'
 import { loginUser } from '../../store/actions/index'
 
 
-import startMainTabs from '../MainTabs/startMainTabs'
+import {startTabs} from '../MainTabs/startMainTabs'
 import DefaultInput from '../../components/UI/DefaultInput/DefaultInput'
 import HeadingText from '../../components/UI/HeadingText/HeadingText'
 import MainText from '../../components/UI/MainText/MainText'
@@ -25,7 +25,7 @@ class AuthScreen extends Component {
 
     componentDidUpdate(){
         if(this.props.user){
-            startMainTabs()
+            startTabs()
         }
     }
 
@@ -40,7 +40,7 @@ class AuthScreen extends Component {
     }
 
     loginHandler= () => {
-        startMainTabs()
+        startTabs()
     }
 
     signupHandler = () => {
