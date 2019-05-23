@@ -10,7 +10,7 @@ import {startTabs} from '../MainTabs/startMainTabs'
 import DefaultInput from '../../components/UI/DefaultInput/DefaultInput'
 import HeadingText from '../../components/UI/HeadingText/HeadingText'
 import MainText from '../../components/UI/MainText/MainText'
-import imageBackground from '../../assets/white-cat.jpg'
+import imageBackground from '../../assets/wp2385339.jpg'
 import ButtonWithBackground from '../../components/UI/ButtonWithBackground/ButtonWithBackground'
 
 
@@ -101,7 +101,7 @@ class AuthScreen extends Component {
             )
 
             submitButtonControl = (
-                <ButtonWithBackground color='#a5b4ef' onTekan={this.signupHandler}>
+                <ButtonWithBackground color='#DA70D6' onTekan={this.signupHandler}>
                     Signup
                 </ButtonWithBackground>
             )
@@ -113,7 +113,7 @@ class AuthScreen extends Component {
             )
         } else {
             submitButtonControl = (
-                <ButtonWithBackground color='#a5b4ef' onTekan={this.loginHandler}>
+                <ButtonWithBackground color='#DA70D6' onTekan={this.loginHandler}>
                     Login
                 </ButtonWithBackground>
             )
@@ -129,14 +129,14 @@ class AuthScreen extends Component {
             <ImageBackground source={imageBackground} style={styles.backgroundImage}>
                 <KeyboardAvoidingView behavior='padding' style={styles.container}>
                     {headingTextControl}
-                    <ButtonWithBackground color='#a5b4ef' onTekan={this.switchAuthModeHandler}>
+                    <ButtonWithBackground color='#DA70D6' onTekan={this.switchAuthModeHandler}>
                         Switch to {this.state.authMode === 'login' ? 'Signup' : 'Login'}
                     </ButtonWithBackground>
                     <View style={styles.inputContainer}>
-                        <DefaultInput 
+                        <DefaultInput
                             placeholder='Your E-Mail Address'
                             onChangeText={val => {this.setState({email: val})}}/>
-                        <DefaultInput
+                        <DefaultInput 
                             placeholder='Password'
                             onChangeText={val => {this.setState({password: val})}}
                             secureTextEntry/>
