@@ -1,14 +1,13 @@
 import firebase from 'firebase'
  // Your web app's Firebase configuration
-    var firebaseConfig = {
-      apiKey: "AIzaSyAi_xIJMA_JPWgZ7Medl9yN1b_fDk6qZ8M",
-      authDomain: "projectmobilesaya.firebaseapp.com",
-      databaseURL: "https://projectmobilesaya.firebaseio.com",
-      projectId: "projectmobilesaya",
-      storageBucket: "projectmobilesaya.appspot.com",
-      messagingSenderId: "553503129392",
-      appId: "1:553503129392:web:4179fd8e5c831e19"
-    
-  }
+ const firebaseConfig = {
+  apiKey: "AIzaSyDkb3uTH7mLG9JuI-L6iWDBnuhRrpi6dOE",
+  authDomain: "projectexam-22443.firebaseapp.com",
+  databaseURL: "https://projectexam-22443.firebaseio.com",
+  projectId: "projectexam-22443",
+  storageBucket: "projectexam-22443.appspot.com",
+  messagingSenderId: "415999063869",
+  appId: "1:415999063869:web:72dbc8d2c6203e72"
+};
   // Initialize Firebase
   export const Fire = firebase.initializeApp(firebaseConfig);
