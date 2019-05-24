@@ -7,6 +7,7 @@ import {Fire} from '../../firebase/index'
 import {logoutUser} from '../../store/actions/auth'
 import Icon from 'react-native-vector-icons/Ionicons'
 
+
 class SideDrawer extends Component {
     logOut = () => {
         Fire.auth().signOut()
@@ -22,7 +23,7 @@ class SideDrawer extends Component {
                 <TouchableOpacity onPress ={this.logOut}>
                 <View style = {styles.drawerItem}>
                     <Icon name='ios-log-out' color='#aaa' size  ={30} style={styles.drawerIcon} />
-                    <Text>Side Drawer</Text>
+                    <Text>LOG OUT BAMBAAAAAANK!!!</Text>
                 </View>
             </TouchableOpacity>
             </View>

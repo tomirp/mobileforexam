@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 import { connect } from 'react-redux'
 
+import {createData} from '../../store/actions/places'
 import PlaceList from '../../components/PlaceList/PlaceList'
 
 class FindPlaceScreen extends Component {
@@ -9,7 +10,6 @@ class FindPlaceScreen extends Component {
         super(props)
         this.props.navigator.setOnNavigatorEvent(this.onNavigatorEvent);
     }
-
     onNavigatorEvent = event => {
         if (event.type === 'NavBarButtonPress'){
             if (event.id === 'sideDrawerToggle'){
@@ -18,8 +18,9 @@ class FindPlaceScreen extends Component {
                 })
             }
         }
+        
     }
-
+    
     itemSelectedHandler = (key) => {
         // selPlace = {value, key, image}
         const selPlace = this.props.places.find(place => {
@@ -27,7 +28,7 @@ class FindPlaceScreen extends Component {
         })
         this.props.navigator.push({
             screen: 'jc8reactnative.PlaceDetailScreen',
-            title: selPlace.value,
+            title: selPlace.nama,
             passProps: {
                 selectedPlace: selPlace
             }
